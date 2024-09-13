@@ -1,0 +1,92 @@
+
+public class TAXISTAND extends SPIEL
+{
+
+    TAXI [] taxis;
+
+    public TAXISTAND()
+    {
+        super();
+        this.tickerIntervallSetzen(1000);
+        this.taxis = new TAXI [4];
+        this.hintergrundgrafikSetzen("background.png");
+    }
+
+    public void tick()
+    {
+        if(taxis[0]==null)
+        {
+            TAXI taxi = new TAXI();
+            this.einordnen(taxi);            
+        }
+
+        int zufallszahl = this.zufallszahlVonBis(0, 4) ;
+
+        if (zufallszahl == 0 && taxis[taxis.length-1] != null)
+        {
+
+                this.abfahren();
+                this.aufruecken();
+
+        }
+
+    }
+
+    public void einordnen(TAXI taxi)
+    {
+        if(taxis[0] == null)
+        {
+            int pos = freiePositionFinden();
+            taxi.fahren(pos*200);
+            this.taxis[pos] = taxi;
+        }
+
+    }
+
+    public int freiePositionFinden()
+    {
+        int pos = 0;
+
+        while (pos < taxis.length-1)
+        {
+            if(this.taxis[pos+1] == null)
+            { 
+                pos++;
+            }
+            else
+            {
+                break;
+            }
+
+        }
+
+        return pos;
+
+    }
+
+    public void abfahren(){
+
+        this.taxis[this.taxis.length-1].fahren(1000);
+        this.taxis[this.taxis.length-1]=null;    
+
+    }
+
+    public void aufruecken()
+    {
+
+        for (int i = this.taxis.length-2 ; i >= 0 ; i--)
+        {
+            if(taxis[i] != null)
+            {
+                try{
+                    Thread.sleep(1000);
+                    this.taxis[i].fahren(200);
+                    this.taxis[i+1] = taxis[i];
+                }catch(Exception e){}
+            }
+        }
+
+        this.taxis[0] = null;
+    }
+
+}
