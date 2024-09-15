@@ -4,6 +4,8 @@ import ea.edu.EduActor;
 
 import ea.edu.event.*;
 
+
+
 /**
  * Die Klasse SPIEL ist ein Template. Es startet alles Notwendige fuer ein Spiel.
  * (Einzige Voraussetzung ist, dass die Engine-Alpha-Bibliothek im Suchpfad erreichbar ist.)

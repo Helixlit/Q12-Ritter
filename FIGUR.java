@@ -2,6 +2,8 @@
 import ea.edu.*;
 import ea.actor.StatefulAnimation;
 
+
+
 /**
  * Klasse FIGUR repreasentiert eine Spielfigur, deren Grafik animiert ist. 
  * Die Animationen koennen durch ein animiertes GIF, durch Einzelbilder 
