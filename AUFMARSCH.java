@@ -60,7 +60,7 @@ class AUFMARSCH extends SPIEL {
     private void abmaschieren() {
         if(armee[0] == null) return;
 
-        zaehler--;
+        this.zaehler--;
 
         armee[0].animiereGerade(1, 20, -4, false);
         this.ritter_entfernen = armee[0];

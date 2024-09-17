@@ -3,7 +3,7 @@
         "."
     ],
     "java.project.referencedLibraries": [
-        "+libs\\jl1.0.1.jar",
-        "+libs\\Engine.Alpha.jar"
+        "c:\\Users\\s210684\\Documents\\git\\Q12-Ritter\\+libs\\Engine.Alpha.jar",
+        "c:\\Users\\s210684\\Documents\\git\\Q12-Ritter\\+libs\\jl1.0.1.jar"
     ]
 }
